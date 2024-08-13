@@ -1,0 +1,200 @@
+:root {
+    --color-first: none;
+    --color-second: none;
+    --controls-height: 80px;
+    --dot-space: 22px;
+    --dot-size: 2px;
+
+}
+
+
+body {
+    background-color: var(--color-first);
+    font-family: "cadiz trial", sans-serif;
+    font-size: 22px;
+    color: var(--color-second);
+    font-weight: 400;
+
+    display: flex;
+
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+
+    /* This centers our sketch vertically. */
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--color-first) 20px, transparent 1%) center, linear-gradient(var(--color-first) 20px, transparent 1%) center, var(--color-second);
+    background-size: 22px 22px;
+}
+
+canvas {
+    position: absolute !important;
+    top: 0px !important;
+    width: calc(100vh + 200px) !important;
+    height: calc(100vh - var(--controls-height)) !important;
+    /* z-index: 1 !important; */
+    display: inline-block !important;
+    border-left: 2px solid var(--color-second);
+    border-right: 2px solid var(--color-second);
+
+}
+
+/* .container {
+    position: absolute;
+    top: 0;
+    background-color: var(--color-first);
+    border: 2px solid var(--color-second);
+    z-index: 10;
+    display: flex;
+    z-index: -1;
+    width: calc(100vh + 200px);
+    height: 100vh
+}
+ */
+
+
+.controls {
+    width: calc(100vh + 200px);
+    height: var(--controls-height);
+    border-top: 2px solid var(--color-second);
+    border-left: 2px solid var(--color-second);
+    border-right: 2px solid var(--color-second);
+    background-color: var(--color-first);
+    bottom: 0px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    z-index: 30;
+
+}
+
+.controls__input {
+    width: calc(50% - 63px);
+    display: flex;
+}
+
+
+.controls__input__text {
+    border: none;
+    outline: none;
+    background: none;
+    height: var(--controls-height);
+    padding-left: 28px;
+    font-family: "cadiz trial", sans-serif;
+    font-size: 22px;
+    color: var(--color-second);
+    width: 100%;
+    border-bottom-left-radius: 60px;
+    transition-duration: 0.2s;
+    font-weight: 400;
+}
+
+.controls__input__text:hover {
+    letter-spacing: 0.08em;
+    color: var(--color-first);
+}
+
+input[type="text"]:hover::first-line {
+    background-color: var(--color-second);
+}
+
+.controls__input__return {
+    font-size: 16px;
+    font-weight: 400;
+    width: 10em;
+    text-align: right;
+    margin-right: 28px;
+    line-height: 100;
+    opacity: 0;
+}
+
+.controls__input:hover>.controls__input__return {
+    opacity: 100;
+    transition-duration: 0.5s;
+}
+
+.controls__snap {
+    height: var(--controls-height);
+    width: var(--controls-height);
+    outline: 2px solid var(--color-second);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.controls__snap__outer {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--color-second);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.controls__snap__inner {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--color-second);
+}
+
+
+
+
+
+
+
+/* .controls__snap:hover>.controls__snap__inner {
+    background-color: yellow;
+
+} */
+
+/* .controls__snap__outer:hover {
+    border-color: var(--color-first);
+
+}
+
+.controls__snap__inner:hover {
+    background-color: 2px solid var(--color-first);
+} */
+
+.controls__color {
+    width: calc(50% - 63px);
+    height: var(--controls-height);
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 28px;
+    align-items: center;
+}
+
+.controls__color__divider {
+    height: 28px;
+    width: 2px;
+    background-color: var(--color-second);
+    margin: 0 20px;
+}
+
+.controls__color__reroll {
+    line-height: var(--controls-height);
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.controls__color__swap {
+    cursor: pointer;
+
+}
